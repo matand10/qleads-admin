@@ -26,7 +26,7 @@ function App() {
     if (!currentUser?.isAdmin) navigate('/login')
   }, [])
 
-  if (!currentUser.isAdmin) return (
+  if (!currentUser?.isAdmin) return (
     <div className="App">
       <Routes>
         <Route path="/login" element={<Login />} />
