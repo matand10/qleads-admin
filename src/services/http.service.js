@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // const BASE_URL = `http://localhost:80/api/`
-const BASE_URL = `https://164.92.245.54:80/api/`
+const BASE_URL = `http://164.92.245.54:80/api/`
 
 
 export const httpService = {
@@ -10,7 +10,6 @@ export const httpService = {
     },
     async post(endpoint, data) {
         const URL = `${BASE_URL}${endpoint}`
-        console.log(URL);
         data = JSON.stringify(data)
         const res = await axios.post(URL, { data })
         return res.data
