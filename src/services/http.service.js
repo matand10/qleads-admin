@@ -10,6 +10,7 @@ export const httpService = {
     },
     async post(endpoint, data) {
         const URL = `${BASE_URL}${endpoint}`
+        console.log(URL);
         data = JSON.stringify(data)
         const res = await axios.post(URL, { data })
         return res.data
@@ -42,24 +43,3 @@ async function ajax(endpoint, method = 'GET', data = null) {
         throw err
     }
 }
-
-// async function ajax(endpoint, method = 'GET', data = null) {
-//     try {
-//         data = JSON.stringify(data)
-//         const res = await axios({
-//             url: `${BASE_URL}${endpoint}`,
-//             method,
-//             data: 'Matan',
-//             params: (method === 'GET') ? data : null
-//         })
-//         return res.data
-//     } catch (err) {
-//         console.log(`Had Issues ${method}ing to the backend, endpoint: ${endpoint}, with data: ${data}`)
-//         console.dir(err)
-//         if (err.response && err.response.status === 401) {
-//             sessionStorage.clear()
-//             if (method === 'GET') window.location.assign('/')
-//         }
-//         throw err
-//     }
-// }
