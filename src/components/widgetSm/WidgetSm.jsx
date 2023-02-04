@@ -1,5 +1,5 @@
 import "./widgetSm.css";
-import { Visibility } from "@material-ui/icons";
+import { Visibility } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { userRequest } from "../../requestMethods";
 
@@ -11,11 +11,11 @@ export default function WidgetSm() {
       try {
         const res = await userRequest.get("users/?new=true");
         setUsers(res.data);
-      } catch {}
+      } catch { }
     };
     getUsers();
   }, []);
-  
+
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>

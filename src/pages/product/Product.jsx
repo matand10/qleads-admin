@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./product.css";
 import Chart from "../../components/chart/Chart";
 import { productData } from "../../dummyData";
-import { Publish } from "@material-ui/icons";
+import { Publish } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import { userRequest } from "../../requestMethods";
@@ -38,8 +38,8 @@ export default function Product() {
     const getStats = async () => {
       try {
         const res = await userRequest.get("orders/income?pid=" + productId);
-        const list = res.data.sort((a,b)=>{
-            return a._id - b._id
+        const list = res.data.sort((a, b) => {
+          return a._id - b._id
         })
         list.map((item) =>
           setPStats((prev) => [
