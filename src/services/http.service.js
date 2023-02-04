@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // const BASE_URL = `http://localhost:80/api/`
-const BASE_URL = `http://164.92.245.54:80/api/`
+const BASE_URL = `https://164.92.245.54:80/api/`
 
 
 export const httpService = {
